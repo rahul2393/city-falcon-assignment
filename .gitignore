@@ -1,0 +1,12 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+
+# bin directory
+bin/*
+
+# IDE
+.idea/*
+.vscode
