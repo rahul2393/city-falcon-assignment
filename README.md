@@ -148,3 +148,10 @@ example query to fetch slow queries beginning with insert statements
 curl --location 'http://localhost:8080/slow-queries?filter=query%3A%22INSERT%22'
 ```
 3) In memory cache is used with TTL of 30 seconds and key API path.
+
+## Architecture
+
+    HTTP > handler/usecase
+           handler/usecase > repository (Postgres)
+           handler/usecase < repository (Postgres)
+    HTTP < usecase
