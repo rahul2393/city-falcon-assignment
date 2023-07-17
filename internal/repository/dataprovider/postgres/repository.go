@@ -78,7 +78,7 @@ func (p PGRepository) SlowQuery(ctx context.Context, req model.SlowQueriesReques
 		req.PageSize = defaultLimit
 	}
 	if req.PageOffset < 0 {
-		req.PageSize = 0
+		req.PageOffset = 0
 	}
 	if err := query.Limit(req.PageSize).Offset(req.PageOffset).Select(&resources); err != nil {
 		return nil, err
@@ -104,7 +104,7 @@ func (p PGRepository) ListEntries(ctx context.Context, req model.ListEntriesRequ
 		req.PageSize = defaultLimit
 	}
 	if req.PageOffset < 0 {
-		req.PageSize = 0
+		req.PageOffset = 0
 	}
 	if err := query.Limit(req.PageSize).Offset(req.PageOffset).Select(&resources); err != nil {
 		return nil, err

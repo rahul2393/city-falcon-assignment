@@ -49,7 +49,7 @@ func main() {
 	logger := NewLogger()
 	repo, err := postgres.NewRepository(options.DBURL, options.LogQuery != "", logger)
 	if err != nil {
-		logger.Fatalf("failed to connect to DB, check connection string: %w", err)
+		logger.Fatalf("failed to connect to DB, check connection string: %v", err)
 	}
 	svc := Service{provider: repo, logger: logger}
 	app := fiber.New()
